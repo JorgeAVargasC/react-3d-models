@@ -1,0 +1,534 @@
+[
+  {
+    "switches": {
+      "puerto3_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto2_dpid": "s6-eth2",
+      "port0_status": "DOWN",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s6-eth1",
+      "switch_dpid": {
+        "low": 6,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto0_dpid": "s6",
+      "puerto3_dpid": "s6-eth3"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s3-eth1",
+      "puerto4_dpid": "s3-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s3-eth4",
+      "switch_dpid": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s3",
+      "puerto3_dpid": "s3-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s4-eth1",
+      "puerto4_dpid": "s4-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s4-eth4",
+      "switch_dpid": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s4",
+      "puerto3_dpid": "s4-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s12-eth1",
+      "puerto4_dpid": "s12-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s12-eth4",
+      "switch_dpid": {
+        "low": 12,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s12",
+      "puerto3_dpid": "s12-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s5-eth1",
+      "puerto4_dpid": "s5-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s5-eth4",
+      "switch_dpid": {
+        "low": 5,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s5",
+      "puerto3_dpid": "s5-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s10-eth1",
+      "puerto4_dpid": "s10-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s10-eth4",
+      "switch_dpid": {
+        "low": 10,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s10",
+      "puerto3_dpid": "s10-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s7-eth4",
+      "puerto4_dpid": "s7-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s7-eth1",
+      "switch_dpid": {
+        "low": 7,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto0_dpid": "s7",
+      "puerto3_dpid": "s7-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto5_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto4_numero": {
+        "low": 5,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s14-eth1",
+      "port5_status": "UP",
+      "puerto4_dpid": "s14-eth5",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s14-eth4",
+      "switch_dpid": {
+        "low": 14,
+        "high": 0
+      },
+      "puerto5_dpid": "s14-eth3",
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s14",
+      "puerto3_dpid": "s14-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s1-eth1",
+      "puerto4_dpid": "s1-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s1-eth4",
+      "switch_dpid": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s1",
+      "puerto3_dpid": "s1-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto3_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto2_dpid": "s13-eth2",
+      "port0_status": "DOWN",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s13-eth1",
+      "switch_dpid": {
+        "low": 13,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto0_dpid": "s13",
+      "puerto3_dpid": "s13-eth3"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s11-eth1",
+      "puerto4_dpid": "s11-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s11-eth4",
+      "switch_dpid": {
+        "low": 11,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s11",
+      "puerto3_dpid": "s11-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s2-eth4",
+      "puerto4_dpid": "s2-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s2-eth1",
+      "switch_dpid": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto0_dpid": "s2",
+      "puerto3_dpid": "s2-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto5_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto4_numero": {
+        "low": 5,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s8-eth1",
+      "port5_status": "UP",
+      "puerto4_dpid": "s8-eth5",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s8-eth4",
+      "switch_dpid": {
+        "low": 8,
+        "high": 0
+      },
+      "puerto5_dpid": "s8-eth3",
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto0_dpid": "s8",
+      "puerto3_dpid": "s8-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s9-eth4",
+      "puerto4_dpid": "s9-eth3",
+      "port0_status": "DOWN",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "UP",
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s9-eth1",
+      "switch_dpid": {
+        "low": 9,
+        "high": 0
+      },
+      "puerto2_numero": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto0_dpid": "s9",
+      "puerto3_dpid": "s9-eth2"
+    }
+  }
+]

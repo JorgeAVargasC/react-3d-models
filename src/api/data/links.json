@@ -1,0 +1,674 @@
+[
+  [
+    {
+      "relationship": {
+        "Destino": "S6",
+        "Origen": "S5",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S6",
+        "Origen": "S7",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S3",
+        "Origen": "S2",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S3",
+        "Origen": "S14",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S3",
+        "Origen": "S1",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S4",
+        "Origen": "S2",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S4",
+        "Origen": "S12",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S4",
+        "Origen": "S5",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S12",
+        "Origen": "S9",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S12",
+        "Origen": "S11",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S12",
+        "Origen": "S4",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S5",
+        "Origen": "S4",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S5",
+        "Origen": "S14",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S5",
+        "Origen": "S6",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S10",
+        "Origen": "S9",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S10",
+        "Origen": "S11",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S10",
+        "Origen": "S14",
+        "OrigenPuerto": {
+          "low": 5,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S7",
+        "Origen": "S8",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S7",
+        "Origen": "S1",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S7",
+        "Origen": "S6",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S14",
+        "Origen": "S5",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S14",
+        "Origen": "S13",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S14",
+        "Origen": "S3",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S14",
+        "Origen": "S10",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 5,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S1",
+        "Origen": "S2",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S1",
+        "Origen": "S7",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S1",
+        "Origen": "S3",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S13",
+        "Origen": "S8",
+        "OrigenPuerto": {
+          "low": 5,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S13",
+        "Origen": "S14",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S11",
+        "Origen": "S12",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S11",
+        "Origen": "S8",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S11",
+        "Origen": "S10",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S2",
+        "Origen": "S4",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S2",
+        "Origen": "S3",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S2",
+        "Origen": "S1",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S8",
+        "Origen": "S9",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S8",
+        "Origen": "S11",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S8",
+        "Origen": "S7",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S8",
+        "Origen": "S13",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 5,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S9",
+        "Origen": "S12",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 4,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S9",
+        "Origen": "S8",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S9",
+        "Origen": "S10",
+        "OrigenPuerto": {
+          "low": 4,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ]
+]
