@@ -1,31 +1,31 @@
-import { envs } from '../config/envs'
-import { linksAdapter } from './adapters/links-adapter'
+import { delay } from '@/helpers/delay'
+import { envs, type IEnvs } from '../config/envs'
+import { linksAdapter } from './adapters/links.adapter'
+import { switchesAdapter } from './adapters/switchs.adapter'
 import axiosInstance from './axios/axios-instance'
 import linksData from './data/links.json'
 import switchesData from './data/switches.json'
 
 import type { ILink } from './types/link'
+import type { ILinkDTO } from './types/link.dto'
 import type { ISwitch } from './types/switch'
+import type { ISwitchDTO } from './types/switch.dto'
 
 export type IApi = {
-  getLinks: () => Promise<ILink[]>
-  getSwitches: () => Promise<ISwitch[]>
+  getLinks: () => Promise<ILinkDTO[]>
+  getSwitches: () => Promise<ISwitchDTO[]>
 }
 
-const dummyApi: IApi = {
+const awaitDelay = delay(2000)
+
+const devApi: IApi = {
   getLinks: async () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(linksAdapter(linksData))
-      }, 1000)
-    })
+    await awaitDelay
+    return linksAdapter(linksData)
   },
   getSwitches: async () => {
-    return await new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(switchesData)
-      }, 1000)
-    })
+    await awaitDelay
+    return switchesAdapter(switchesData)
   }
 }
 
@@ -36,10 +36,15 @@ const prodApi: IApi = {
   },
   getSwitches: async () => {
     const res = await axiosInstance.get<ISwitch[]>('/switches')
-    return res.data
+    return switchesAdapter(res.data)
   }
 }
 
-const api: IApi = envs.apiMode === 'prod' ? prodApi : dummyApi
+const apis: Record<IEnvs['apiMode'], IApi> = {
+  dev: devApi,
+  prod: prodApi
+}
+
+const api: IApi = apis[envs.apiMode]
 
 export default api

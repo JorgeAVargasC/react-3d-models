@@ -2,14 +2,14 @@ export interface ILink {
   relationship: IRelationship
 }
 
-export interface IRelationship {
+interface IRelationship {
   Destino: string
   Origen: string
   OrigenPuerto: IPuerto
   DestinoPuerto: IPuerto
 }
 
-export interface IPuerto {
+interface IPuerto {
   low: number
   high: number
 }

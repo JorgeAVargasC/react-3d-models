@@ -1,4 +1,4 @@
-type IEnvs = {
+export type IEnvs = {
   apiUrl: string
   apiMode: 'dev' | 'prod'
 }
