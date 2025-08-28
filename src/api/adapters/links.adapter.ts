@@ -6,6 +6,7 @@ const parseSwitchId = (name: string): number => Number(name.replace(/^S/i, ''))
 export const linksAdapter = (links: ILink[][]): ILinkDTO[] => {
   return links.flat().map((link) => ({
     source: parseSwitchId(link.relationship.Origen),
-    target: parseSwitchId(link.relationship.Destino)
+    target: parseSwitchId(link.relationship.Destino),
+    linkData: link.relationship
   }))
 }

@@ -1,15 +1,15 @@
 export interface ILink {
-  relationship: IRelationship
+  relationship: LinkData
 }
 
-interface IRelationship {
+interface LinkData {
   Destino: string
   Origen: string
-  OrigenPuerto: IPuerto
-  DestinoPuerto: IPuerto
+  OrigenPuerto: PortNumber
+  DestinoPuerto: PortNumber
 }
 
-interface IPuerto {
+interface PortNumber {
   low: number
   high: number
 }
