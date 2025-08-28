@@ -7,6 +7,9 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import type { ISwitchDTO } from '@/api/types/switch.dto'
 import type { ILinkDTO } from '@/api/types/link.dto'
 
+import SpriteText from 'three-spritetext'
+import { getSwitchDataHTML } from './get-switch-data-html'
+
 interface Props {
   switches: ISwitchDTO[]
   links: ILinkDTO[]
@@ -21,7 +24,6 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
     if (fgRef.current) {
       fgRef.current.d3Force('charge')?.strength(-80)
 
-      // 👇 acceder al OrbitControls
       const controls = (fgRef.current as any).controls as OrbitControls
       if (controls) {
         controls.enableDamping = true
@@ -29,11 +31,9 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
         controls.enablePan = true
         controls.enableZoom = true
 
-        // 🎮 evita rotaciones "raras" (ej: quedar viendo al revés)
-        controls.minPolarAngle = Math.PI / 4 // límite inferior (45°)
-        controls.maxPolarAngle = (3 * Math.PI) / 4 // límite superior (135°)
+        controls.minPolarAngle = Math.PI / 4
+        controls.maxPolarAngle = (3 * Math.PI) / 4
 
-        // puedes controlar la distancia mínima/máxima
         controls.minDistance = 50
         controls.maxDistance = 500
       }
@@ -41,8 +41,8 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
   }, [])
 
   const data = {
-    nodes: switches.map((s) => ({ ...s, id: s.id })),
-    links: links.map((l) => ({ ...l, source: l.source, target: l.target }))
+    nodes: switches,
+    links: links
   }
 
   useEffect(() => {
@@ -64,19 +64,40 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
     <ForceGraph3D
       ref={fgRef}
       graphData={data}
-      nodeThreeObject={() => {
-        if (custom3dObj) return custom3dObj.clone(true)
-        return new THREE.Mesh(
-          new THREE.BoxGeometry(5, 5, 5),
-          new THREE.MeshStandardMaterial({ color: 'gray' })
-        )
+      nodeThreeObject={(node) => {
+        const group = new THREE.Group()
+
+        if (custom3dObj) {
+          const obj = custom3dObj.clone(true)
+          group.add(obj)
+        } else {
+          group.add(
+            new THREE.Mesh(
+              new THREE.BoxGeometry(5, 5, 5),
+              new THREE.MeshStandardMaterial({ color: 'gray' })
+            )
+          )
+        }
+
+        const myNode = node as ISwitchDTO
+
+        const label = new SpriteText(myNode.name, 5)
+        label.color = 'green'
+        label.position.set(0, 15, 0)
+        group.add(label)
+
+        return group
       }}
-      linkColor={() => 'rgba(230, 255, 208, 0.3)'}
-      linkOpacity={0.5}
-      linkWidth={0.5}
+      nodeLabel={(node) => {
+        const switchData = node as ISwitchDTO
+        return getSwitchDataHTML(switchData)
+      }}
+      linkColor={() => 'rgb(14, 230, 43)'}
+      linkOpacity={0.2}
+      linkWidth={0.6}
       linkDirectionalParticles={1}
       linkDirectionalParticleSpeed={0.003}
-      linkDirectionalParticleWidth={1}
+      linkDirectionalParticleWidth={1.5}
       backgroundColor='#00000000'
     />
   )

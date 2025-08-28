@@ -9,7 +9,7 @@ export const MainPage = () => {
   const isFetching = linksQuery.isFetching || switchesQuery.isFetching
 
   return (
-    <div className='dark min-h-dvh min-w-dvw overflow-hidden bg-background text-foreground max-h-dvh max-w-dvw'>
+    <div className='min-h-dvh min-w-dvw overflow-hidden bg-background text-foreground max-h-dvh max-w-dvw'>
       {isFetching && (
         <div className='fixed inset-0 z-20 flex items-center justify-center bg-blue/30 backdrop-blur-sm'>
           <div className='h-16 w-16 animate-spin rounded-full border-8 border-gray-200 border-t-sky-600'></div>
