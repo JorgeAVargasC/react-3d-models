@@ -1,55 +1,47 @@
 import * as THREE from 'three'
-import ForceGraph3D, { type ForceGraphMethods } from 'react-force-graph-3d'
+import ForceGraph3D, {
+  type ForceGraphMethods,
+  type LinkObject,
+  type NodeObject
+} from 'react-force-graph-3d'
 import { useEffect, useRef, useState } from 'react'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 import type { ISwitchDTO } from '@/api/types/switch.dto'
 import type { ILinkDTO } from '@/api/types/link.dto'
+import type { GraphNode, GraphLink } from '@/api/types/graph-types'
 
 import SpriteText from 'three-spritetext'
 import { getSwitchDataHTML } from './get-switch-data-html'
+import { buildGraphData } from '@/api/functions/build-graph'
+import { getPortDataHTML } from './get-node-data-html'
 
 interface Props {
   switches: ISwitchDTO[]
   links: ILinkDTO[]
 }
 
-export const CanvasTopologyV1 = ({ switches, links }: Props) => {
-  const fgRef = useRef<ForceGraphMethods | undefined>(undefined)
+type IRef =
+  | ForceGraphMethods<NodeObject<GraphNode>, LinkObject<GraphNode, GraphLink>>
+  | undefined
 
+export const CanvasTopologyV1 = ({ switches, links }: Props) => {
+  const fgRef = useRef<IRef>(undefined)
   const [custom3dObj, setCustom3dObj] = useState<THREE.Object3D | null>(null)
+
+  const data = buildGraphData(switches, links)
 
   useEffect(() => {
     if (fgRef.current) {
-      fgRef.current.d3Force('charge')?.strength(-80)
-
-      const controls = (fgRef.current as any).controls as OrbitControls
-      if (controls) {
-        controls.enableDamping = true
-        controls.dampingFactor = 0.08
-        controls.enablePan = true
-        controls.enableZoom = true
-
-        controls.minPolarAngle = Math.PI / 4
-        controls.maxPolarAngle = (3 * Math.PI) / 4
-
-        controls.minDistance = 50
-        controls.maxDistance = 500
-      }
+      fgRef.current.d3Force('charge')?.strength(-150)
     }
   }, [])
-
-  const data = {
-    nodes: switches,
-    links: links
-  }
 
   useEffect(() => {
     const loader = new GLTFLoader()
     loader.load('/3d/router/source/lyq.glb', (gltf) => {
       const object = gltf.scene
-      object.scale.set(0.5, 0.5, 0.5)
+      object.scale.set(1, 1, 1)
       object.traverse((child) => {
         if ((child as THREE.Mesh).isMesh) {
           child.castShadow = true
@@ -64,41 +56,67 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
     <ForceGraph3D
       ref={fgRef}
       graphData={data}
-      nodeThreeObject={(node) => {
+      backgroundColor='#00000000'
+      nodeThreeObject={(node: GraphNode) => {
         const group = new THREE.Group()
 
-        if (custom3dObj) {
-          const obj = custom3dObj.clone(true)
-          group.add(obj)
-        } else {
-          group.add(
-            new THREE.Mesh(
-              new THREE.BoxGeometry(5, 5, 5),
-              new THREE.MeshStandardMaterial({ color: 'gray' })
+        if (node.type === 'switch') {
+          const sw = node
+
+          if (custom3dObj) {
+            group.add(custom3dObj.clone(true))
+          } else {
+            group.add(
+              new THREE.Mesh(
+                new THREE.BoxGeometry(6, 6, 6),
+                new THREE.MeshStandardMaterial({ color: 'blue' })
+              )
             )
-          )
+          }
+
+          const label = new SpriteText(sw.name, 10)
+          label.color = 'cyan'
+          label.position.set(0, 10, 0)
+          group.add(label)
         }
 
-        const myNode = node as ISwitchDTO
+        if (node.type === 'port') {
+          const port = node
 
-        const label = new SpriteText(myNode.name, 5)
-        label.color = 'green'
-        label.position.set(0, 15, 0)
-        group.add(label)
+          group.add(
+            new THREE.Mesh(
+              new THREE.SphereGeometry(3, 16, 16),
+              new THREE.MeshStandardMaterial({
+                color: port.isActive ? 'lime' : 'red'
+              })
+            )
+          )
+
+          const label = new SpriteText(port.label, 5)
+          label.color = 'yellow'
+          label.position.set(0, 4, 0)
+          group.add(label)
+        }
 
         return group
       }}
-      nodeLabel={(node) => {
-        const switchData = node as ISwitchDTO
-        return getSwitchDataHTML(switchData)
+      nodeLabel={(node: GraphNode) => {
+        if (node.type === 'switch') {
+          return getSwitchDataHTML(node)
+        }
+        if (node.type === 'port') {
+          return getPortDataHTML(node)
+        }
+        return ''
       }}
-      linkColor={() => 'rgb(14, 230, 43)'}
-      linkOpacity={0.2}
-      linkWidth={0.6}
-      linkDirectionalParticles={1}
-      linkDirectionalParticleSpeed={0.003}
-      linkDirectionalParticleWidth={1.5}
-      backgroundColor='#00000000'
+      linkColor={(link: GraphLink) =>
+        link.internal ? 'gray' : 'rgb(14, 230, 43)'
+      }
+      linkOpacity={0.5}
+      linkWidth={(link: GraphLink) => (link.internal ? 0.8 : 1)}
+      linkDirectionalParticles={(link: GraphLink) => (link.internal ? 1 : 2)}
+      linkDirectionalParticleSpeed={0.004}
+      linkDirectionalParticleWidth={1.2}
     />
   )
 }

@@ -1,6 +1,4 @@
 export type ISwitchDTO = {
-  id: number
-
   name: string
 
   switchPort: {

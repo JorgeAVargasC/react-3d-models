@@ -1,6 +1,6 @@
-import type { ISwitchDTO } from '@/api/types/switch.dto'
+import type { SwitchNode } from '@/api/types/graph-types'
 
-export const getSwitchDataHTML = (switchData: ISwitchDTO): string => {
+export const getSwitchDataHTML = (switchData: SwitchNode): string => {
   const getPortStatus = (isActive: boolean) => {
     return `
       <span class="px-2 py-0.5 rounded-full text-xs font-medium ${
@@ -14,7 +14,7 @@ export const getSwitchDataHTML = (switchData: ISwitchDTO): string => {
   }
 
   return `
-    <div class="min-w-[300px] max-w-sm rounded-2xl bg-card/70 backdrop-blur-md border border-slate-700/60 text-white shadow-xl overflow-hidden">
+    <div class="min-w-[330px] max-w-sm rounded-2xl bg-card/70 backdrop-blur-md border border-slate-700/60 text-white shadow-xl overflow-hidden">
       <!-- Header -->
       <div class="bg-gradient-to-r bg-slate-950/90 px-4 py-2 flex items-center justify-between">
       <h2 class="font-semibold text-lg tracking-wide">${switchData.name}</h2>
