@@ -2,12 +2,12 @@ import type {
   GraphLink,
   GraphNode,
   PortId,
+  PortNode,
   SwitchId,
-  SwitchNode,
-  PortNode
-} from '../types/graph-types'
-import type { ILinkDTO } from '../types/link.dto'
-import type { ISwitchDTO } from '../types/switch.dto'
+  SwitchNode
+} from '@/api/types/graph-types'
+import type { ILinkDTO } from '@/api/types/link.dto'
+import type { ISwitchDTO } from '@/api/types/switch.dto'
 
 export const buildGraphData = (
   switches: ISwitchDTO[],
@@ -22,7 +22,8 @@ export const buildGraphData = (
     const switchNode: SwitchNode = {
       ...sw,
       id: switchId,
-      type: 'switch'
+      type: 'switch',
+      group: switchId // 👈 cada switch define su propio grupo
     }
     nodes.push(switchNode)
 
@@ -33,7 +34,8 @@ export const buildGraphData = (
         ...port,
         id: portId,
         type: 'port',
-        parentSwitchId: switchId
+        parentSwitchId: switchId,
+        group: switchId // 👈 mismo grupo que el switch padre
       }
       nodes.push(portNode)
 

@@ -3,13 +3,15 @@ import type { ISwitchDTO } from '@/api/types/switch.dto'
 export type SwitchId = `${number}-${number}`
 export type PortId = `${SwitchId}-${number}-${number}`
 
-export type SwitchNode = Omit<ISwitchDTO, 'id'> & {
+export type SwitchNode = ISwitchDTO & {
   id: SwitchId
+  group: SwitchId
   type: 'switch'
 }
 
 export type PortNode = ISwitchDTO['ports'][number] & {
   id: PortId
+  group: SwitchId
   type: 'port'
   parentSwitchId: SwitchId
 }

@@ -13,8 +13,13 @@ import type { GraphNode, GraphLink } from '@/api/types/graph-types'
 
 import SpriteText from 'three-spritetext'
 import { getSwitchDataHTML } from './get-switch-data-html'
-import { buildGraphData } from '@/api/functions/build-graph'
 import { getPortDataHTML } from './get-node-data-html'
+import { createTableTexture } from './create-table-texture'
+import { buildGraphData } from './build-graph'
+import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
+import { getLinkMetricsHTML } from './get-links-metrics-html'
+import api from '@/api/api'
+import type { ILinkMetricsDTO } from '@/api/types/link-metrics.dto'
 
 interface Props {
   switches: ISwitchDTO[]
@@ -30,6 +35,28 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
   const [custom3dObj, setCustom3dObj] = useState<THREE.Object3D | null>(null)
 
   const data = buildGraphData(switches, links)
+
+  // 🔹 cache de métricas: key = "source-target"
+  const [linkMetrics, setLinkMetrics] = useState<
+    Record<string, ILinkMetricsDTO>
+  >({})
+
+  // 🔹 Preload metrics
+  useEffect(() => {
+    const fetchMetrics = async () => {
+      const results: Record<string, ILinkMetricsDTO> = {}
+      for (const l of links) {
+        // 👇 OJO: aquí usas el dto real de tu API
+        const m = await api.getLinkMetrics(
+          l.sourceSwitch.low,
+          l.targetSwitch.low
+        )
+        results[`${l.sourceSwitch.low}-${l.targetSwitch.low}`] = m
+      }
+      setLinkMetrics(results)
+    }
+    fetchMetrics()
+  }, [links])
 
   useEffect(() => {
     if (fgRef.current) {
@@ -74,6 +101,34 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
             )
           }
 
+          // Floating Table
+          const tableTexture = createTableTexture(sw)
+
+          const materials = [
+            new THREE.MeshStandardMaterial({ color: '#111' }), // side X+
+            new THREE.MeshStandardMaterial({ color: '#111' }), // side X-
+            new THREE.MeshStandardMaterial({ color: '#111' }), // side Y+
+            new THREE.MeshStandardMaterial({ color: '#111' }), // side Y-
+            new THREE.MeshStandardMaterial({
+              map: tableTexture,
+              transparent: true
+            }),
+            new THREE.MeshStandardMaterial({ color: '#222' })
+          ]
+
+          const tableMesh = new THREE.Mesh(
+            new THREE.BoxGeometry(60, 30, 2),
+            materials
+          )
+
+          tableMesh.position.set(0, 25, 0) // más arriba
+          tableMesh.onBeforeRender = (_, __, camera) => {
+            tableMesh.lookAt(camera.position)
+          }
+          tableMesh.lookAt(new THREE.Vector3(0, 0, 0)) // opcional: orientado a cámara
+
+          group.add(tableMesh)
+
           const label = new SpriteText(sw.name, 10)
           label.color = 'cyan'
           label.position.set(0, 10, 0)
@@ -109,12 +164,38 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
         }
         return ''
       }}
+      // Links
+
+      linkThreeObjectExtend={true}
+      linkThreeObject={(link: GraphLink) => {
+        if (link.internal) return new THREE.Group()
+
+        const key = `${link.source}-${link.target}`
+        const metrics = linkMetrics[key]
+        if (!metrics) return new THREE.Group()
+
+        const html = getLinkMetricsHTML(metrics)
+        const div = document.createElement('div')
+        div.innerHTML = JSON.stringify(html)
+        const el = div.firstElementChild as HTMLElement
+
+        return new CSS2DObject(el)
+      }}
+      linkPositionUpdate={(obj, { start, end }) => {
+        if (!(obj instanceof CSS2DObject)) return
+        const mid = {
+          x: (start.x + end.x) / 2,
+          y: (start.y + end.y) / 2,
+          z: (start.z + end.z) / 2
+        }
+        obj.position.set(mid.x, mid.y + 5, mid.z)
+      }}
       linkColor={(link: GraphLink) =>
         link.internal ? 'gray' : 'rgb(14, 230, 43)'
       }
       linkOpacity={0.5}
       linkWidth={(link: GraphLink) => (link.internal ? 0.8 : 1)}
-      linkDirectionalParticles={(link: GraphLink) => (link.internal ? 1 : 2)}
+      linkDirectionalParticles={(link: GraphLink) => (link.internal ? 3 : 6)}
       linkDirectionalParticleSpeed={0.004}
       linkDirectionalParticleWidth={1.2}
     />

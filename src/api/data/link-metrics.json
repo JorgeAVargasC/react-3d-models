@@ -1,0 +1,7 @@
+{
+  "origen": "2",
+  "destino": "3",
+  "perdidas": 50,
+  "delay": "150",
+  "throughput": "200"
+}
