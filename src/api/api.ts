@@ -32,8 +32,7 @@ const devApi: IApi = {
     await awaitDelay
     return switchesAdapter(switchesData)
   },
-  getLinkMetrics: async (source, target) => {
-    console.log(source, target)
+  getLinkMetrics: async (_source, _target) => {
     await awaitDelay
     return linkMetricsAdapter(linkMetricsData)
   }

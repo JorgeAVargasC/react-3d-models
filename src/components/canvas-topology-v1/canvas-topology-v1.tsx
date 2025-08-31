@@ -16,10 +16,9 @@ import { getSwitchDataHTML } from './get-switch-data-html'
 import { getPortDataHTML } from './get-node-data-html'
 import { createTableTexture } from './create-table-texture'
 import { buildGraphData } from './build-graph'
-import { CSS2DObject } from 'three/examples/jsm/renderers/CSS2DRenderer.js'
-import { getLinkMetricsHTML } from './get-links-metrics-html'
 import api from '@/api/api'
 import type { ILinkMetricsDTO } from '@/api/types/link-metrics.dto'
+import { createTableTextureLinkMetrics } from './create-table-texture-link-metrics'
 
 interface Props {
   switches: ISwitchDTO[]
@@ -36,25 +35,23 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
 
   const data = buildGraphData(switches, links)
 
-  // 🔹 cache de métricas: key = "source-target"
   const [linkMetrics, setLinkMetrics] = useState<
     Record<string, ILinkMetricsDTO>
   >({})
 
-  // 🔹 Preload metrics
-  useEffect(() => {
-    const fetchMetrics = async () => {
-      const results: Record<string, ILinkMetricsDTO> = {}
-      for (const l of links) {
-        // 👇 OJO: aquí usas el dto real de tu API
-        const m = await api.getLinkMetrics(
-          l.sourceSwitch.low,
-          l.targetSwitch.low
-        )
-        results[`${l.sourceSwitch.low}-${l.targetSwitch.low}`] = m
-      }
-      setLinkMetrics(results)
+  const fetchMetrics = async () => {
+    const results: Record<string, ILinkMetricsDTO> = {}
+    for (const l of links) {
+      const m = await api.getLinkMetrics(l.sourceSwitch, l.targetSwitch)
+      results[
+        `${l.sourceSwitch}-${l.sourcePort}-${l.targetSwitch}-${l.targetPort}`
+      ] = m
     }
+
+    setLinkMetrics(results)
+  }
+
+  useEffect(() => {
     fetchMetrics()
   }, [links])
 
@@ -78,6 +75,10 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
       setCustom3dObj(object)
     })
   }, [])
+
+  if (Object.keys(linkMetrics).length === 0) {
+    return <></>
+  }
 
   return (
     <ForceGraph3D
@@ -170,25 +171,51 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
       linkThreeObject={(link: GraphLink) => {
         if (link.internal) return new THREE.Group()
 
-        const key = `${link.source}-${link.target}`
-        const metrics = linkMetrics[key]
-        if (!metrics) return new THREE.Group()
+        const linkKey = `${link.source}-${link.target}`
+        const currentLinkMetric = linkMetrics[linkKey]
 
-        const html = getLinkMetricsHTML(metrics)
-        const div = document.createElement('div')
-        div.innerHTML = JSON.stringify(html)
-        const el = div.firstElementChild as HTMLElement
+        if (!currentLinkMetric) return new THREE.Group()
 
-        return new CSS2DObject(el)
+        const group = new THREE.Group()
+
+        // Floating Table
+        const tableTexture = createTableTextureLinkMetrics(currentLinkMetric)
+
+        const materials = [
+          new THREE.MeshStandardMaterial({ color: '#FFF' }),
+          new THREE.MeshStandardMaterial({ color: '#FFF' }),
+          new THREE.MeshStandardMaterial({ color: '#FFF' }),
+          new THREE.MeshStandardMaterial({ color: '#FFF' }),
+          new THREE.MeshStandardMaterial({
+            map: tableTexture,
+            transparent: true
+          }),
+          new THREE.MeshStandardMaterial({ color: '#222' })
+        ]
+
+        const tableMesh = new THREE.Mesh(
+          new THREE.BoxGeometry(60, 30, 2),
+          materials
+        )
+
+        tableMesh.position.set(0, 25, 0)
+        tableMesh.onBeforeRender = (_, __, camera) => {
+          tableMesh.lookAt(camera.position)
+        }
+
+        group.add(tableMesh)
+
+        return group
       }}
       linkPositionUpdate={(obj, { start, end }) => {
-        if (!(obj instanceof CSS2DObject)) return
+        // Esto ahora sirve también para Mesh o Group
         const mid = {
           x: (start.x + end.x) / 2,
           y: (start.y + end.y) / 2,
           z: (start.z + end.z) / 2
         }
-        obj.position.set(mid.x, mid.y + 5, mid.z)
+
+        obj.position.set(mid.x, mid.y + 10, mid.z) // un poco elevado
       }}
       linkColor={(link: GraphLink) =>
         link.internal ? 'gray' : 'rgb(14, 230, 43)'

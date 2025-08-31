@@ -1,25 +1,22 @@
 import type { ISwitchDTO } from '@/api/types/switch.dto'
 
-export type SwitchId = `${number}-${number}`
-export type PortId = `${SwitchId}-${number}-${number}`
-
 export type SwitchNode = ISwitchDTO & {
-  id: SwitchId
-  group: SwitchId
+  id: string
+  group: string
   type: 'switch'
 }
 
 export type PortNode = ISwitchDTO['ports'][number] & {
   id: PortId
-  group: SwitchId
+  group: string
   type: 'port'
-  parentSwitchId: SwitchId
+  parentSwitchId: string
 }
 
 export type GraphNode = SwitchNode | PortNode
 
 export type GraphLink = {
-  source: SwitchId | PortId
-  target: SwitchId | PortId
+  source: string
+  target: string
   internal: boolean
 }

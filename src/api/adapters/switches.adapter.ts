@@ -9,15 +9,13 @@ export const switchesAdapter = (switches: ISwitch[]): ISwitchDTO[] => {
       const isActive = (s as any)[`port${i}_status`]
       const dpid = (s as any)[`puerto${i}_dpid`]
       const low = (s as any)[`puerto${i}_numero`]?.low
-      const high = (s as any)[`puerto${i}_numero`]?.high
 
-      if (isActive || dpid || low !== undefined || high !== undefined) {
+      if (isActive || dpid || low !== undefined) {
         return {
           label: `Port ${i}`,
           isActive: isActive === 'UP',
           dpid: dpid ?? '',
-          low: low ?? 0,
-          high: high ?? 0
+          number: low
         }
       }
       return null
@@ -27,10 +25,7 @@ export const switchesAdapter = (switches: ISwitch[]): ISwitchDTO[] => {
       id: s.switch_dpid.low,
       name: s.puerto0_dpid,
       ports,
-      switchPort: {
-        low: s.switch_dpid.low,
-        high: s.switch_dpid.high
-      }
+      switchPort: s.switch_dpid.low
     }
   })
 }

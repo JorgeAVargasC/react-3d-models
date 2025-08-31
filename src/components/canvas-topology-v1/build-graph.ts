@@ -1,9 +1,7 @@
 import type {
   GraphLink,
   GraphNode,
-  PortId,
   PortNode,
-  SwitchId,
   SwitchNode
 } from '@/api/types/graph-types'
 import type { ILinkDTO } from '@/api/types/link.dto'
@@ -17,26 +15,28 @@ export const buildGraphData = (
   const newLinks: GraphLink[] = []
 
   switches.forEach((sw) => {
-    const switchId: SwitchId = `${sw.switchPort.low}-${sw.switchPort.high}`
+    const switchId: string = sw.switchPort.toString()
 
     const switchNode: SwitchNode = {
       ...sw,
       id: switchId,
       type: 'switch',
-      group: switchId // 👈 cada switch define su propio grupo
+      group: switchId
     }
+
     nodes.push(switchNode)
 
     sw.ports.forEach((port) => {
-      const portId: PortId = `${switchId}-${port.low}-${port.high}`
+      const portId = `${switchId}-${port.number}`
 
       const portNode: PortNode = {
         ...port,
         id: portId,
         type: 'port',
         parentSwitchId: switchId,
-        group: switchId // 👈 mismo grupo que el switch padre
+        group: switchId
       }
+
       nodes.push(portNode)
 
       const switchToPort: GraphLink = {
@@ -49,11 +49,11 @@ export const buildGraphData = (
   })
 
   links.forEach((lnk) => {
-    const sourceSwitchId: SwitchId = `${lnk.sourceSwitch.low}-${lnk.sourceSwitch.high}`
-    const targetSwitchId: SwitchId = `${lnk.targetSwitch.low}-${lnk.targetSwitch.high}`
+    const sourceSwitchId = `${lnk.sourceSwitch}`
+    const targetSwitchId = `${lnk.targetSwitch}`
 
-    const sourcePortId: PortId = `${sourceSwitchId}-${lnk.sourcePort.low}-${lnk.sourcePort.high}`
-    const targetPortId: PortId = `${targetSwitchId}-${lnk.targetPort.low}-${lnk.targetPort.high}`
+    const sourcePortId = `${sourceSwitchId}-${lnk.sourcePort}`
+    const targetPortId = `${targetSwitchId}-${lnk.targetPort}`
 
     const portToPort: GraphLink = {
       source: sourcePortId,
