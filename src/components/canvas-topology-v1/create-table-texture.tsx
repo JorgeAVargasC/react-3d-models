@@ -23,8 +23,8 @@ export function createTableTexture(sw: SwitchNode): THREE.Texture {
   ctx.fillText(sw.name, 24, 32)
 
   // Low / High pills
-  drawPill(ctx, `LOW: ${sw.switchPort.low}`, canvas.width - 190, 12, '#94a3b8')
-  drawPill(ctx, `HIGH: ${sw.switchPort.high}`, canvas.width - 95, 12, '#94a3b8')
+  drawPill(ctx, `LOW: ${sw.switchPort}`, canvas.width - 190, 12, '#94a3b8')
+  drawPill(ctx, `HIGH: ${sw.switchPort}`, canvas.width - 95, 12, '#94a3b8')
 
   // ========== Table headers ==========
   const headers = ['PORT', 'STATUS', 'DPID', 'LOW', 'HIGH']
@@ -65,8 +65,8 @@ export function createTableTexture(sw: SwitchNode): THREE.Texture {
 
     ctx.fillStyle = '#e2e8f0'
     ctx.fillText(p.dpid, 250, y)
-    ctx.fillText(String(p.low), 380, y)
-    ctx.fillText(String(p.high), 500, y)
+    ctx.fillText(String(p.number), 380, y)
+    ctx.fillText(String(p.number), 500, y)
 
     // row separator
     ctx.strokeStyle = 'rgba(51,65,85,0.4)'

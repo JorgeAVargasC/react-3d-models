@@ -34,10 +34,10 @@ export const getPortDataHTML = (portData: PortNode): string => {
         </div>
         <div class="grid grid-cols-2 gap-2 mt-2">
           <p class="text-xs font-medium px-2 py-0.5 text-slate-400 rounded-full border border-slate-500/40 bg-slate-500/20">
-            LOW: ${portData.low}
+            LOW: ${portData.number}
           </p>
           <p class="text-xs font-medium px-2 py-0.5 text-slate-400 rounded-full border border-slate-500/40 bg-slate-500/20">
-            HIGH: ${portData.high}
+            HIGH: ${portData.number}
           </p>
         </div>
       </div>

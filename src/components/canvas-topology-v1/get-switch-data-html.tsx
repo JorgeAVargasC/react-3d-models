@@ -19,8 +19,8 @@ export const getSwitchDataHTML = (switchData: SwitchNode): string => {
       <div class="bg-gradient-to-r bg-slate-950/90 px-4 py-2 flex items-center justify-between">
       <h2 class="font-semibold text-lg tracking-wide">${switchData.name}</h2>
         <div class="flex items-center gap-2">
-          <p class="text-xs font-medium px-2 py-0.5 text-slate-400 rounded-full border border-slate-500/40 bg-slate-500/20 ">LOW: ${switchData.switchPort.low}</p>
-          <p class="text-xs font-medium px-2 py-0.5 text-slate-400 rounded-full border border-slate-500/40 bg-slate-500/20 ">HIGH: ${switchData.switchPort.high}</p>
+          <p class="text-xs font-medium px-2 py-0.5 text-slate-400 rounded-full border border-slate-500/40 bg-slate-500/20 ">LOW: ${switchData.switchPort}</p>
+          <p class="text-xs font-medium px-2 py-0.5 text-slate-400 rounded-full border border-slate-500/40 bg-slate-500/20 ">HIGH: ${switchData.switchPort}</p>
         </div>
       </div>
 
@@ -46,8 +46,8 @@ export const getSwitchDataHTML = (switchData: SwitchNode): string => {
                     ${getPortStatus(p.isActive)}
                   </td>
                   <td class="p-2 text-slate-300">${p.dpid}</td>
-                  <td class="p-2 text-slate-300">${p.low}</td>
-                  <td class="p-2 text-slate-300">${p.high}</td>
+                  <td class="p-2 text-slate-300">${p.number}</td>
+                  <td class="p-2 text-slate-300">${p.number}</td>
                 </tr>
               `
               )
