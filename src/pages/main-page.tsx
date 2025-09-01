@@ -1,4 +1,4 @@
-import { CanvasTopologyV1 } from '@/components/canvas-topology-v1/canvas-topology-v1'
+import { NetworkTopology3D } from '@/components/network-topology-3d/network-topology-3d'
 import { useGetLinks } from '../hooks/use-get-links'
 import { useGetSwitches } from '../hooks/use-get-switches'
 
@@ -17,7 +17,7 @@ export const MainPage = () => {
       )}
 
       {!isFetching && linksQuery.data && switchesQuery.data && (
-        <CanvasTopologyV1
+        <NetworkTopology3D
           switches={switchesQuery.data || []}
           links={linksQuery.data || []}
         />

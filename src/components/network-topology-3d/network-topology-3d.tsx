@@ -19,6 +19,7 @@ import api from '@/api/api'
 import type { ILinkMetricsDTO } from '@/api/types/link-metrics.dto'
 import { createLinksTableTexture } from './create-links-table-texture'
 import { createSwitchTableTexture } from './create-switch-table-texture'
+import { envs } from '@/config/envs'
 
 interface Props {
   switches: ISwitchDTO[]
@@ -29,7 +30,7 @@ type IRef =
   | ForceGraphMethods<NodeObject<GraphNode>, LinkObject<GraphNode, GraphLink>>
   | undefined
 
-export const CanvasTopologyV1 = ({ switches, links }: Props) => {
+export const NetworkTopology3D = ({ switches, links }: Props) => {
   const fgRef = useRef<IRef>(undefined)
   const [custom3dObj, setCustom3dObj] = useState<THREE.Object3D | null>(null)
 
@@ -97,7 +98,7 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
             group.add(
               new THREE.Mesh(
                 new THREE.BoxGeometry(6, 6, 6),
-                new THREE.MeshStandardMaterial({ color: 'blue' })
+                new THREE.MeshStandardMaterial({ color: envs.styles.switchColor })
               )
             )
           }
@@ -131,7 +132,7 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
           group.add(tableMesh)
 
           const label = new SpriteText(sw.name, 10)
-          label.color = 'cyan'
+          label.color = envs.styles.switchColor
           label.position.set(0, 10, 0)
           group.add(label)
         }
@@ -143,13 +144,17 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
             new THREE.Mesh(
               new THREE.SphereGeometry(3, 16, 16),
               new THREE.MeshStandardMaterial({
-                color: port.isActive ? 'lime' : 'red'
+                color: port.isActive
+                  ? envs.styles.successColor
+                  : envs.styles.errorColor
               })
             )
           )
 
           const label = new SpriteText(port.label, 5)
-          label.color = 'yellow'
+          label.color = port.isActive
+            ? envs.styles.successColor
+            : envs.styles.errorColor
           label.position.set(0, 4, 0)
           group.add(label)
         }
@@ -217,7 +222,7 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
         obj.position.set(mid.x, mid.y + 10, mid.z)
       }}
       linkColor={(link: GraphLink) =>
-        link.internal ? 'gray' : 'rgb(14, 230, 43)'
+        link.internal ? 'gray' : envs.styles.linkColor
       }
       linkOpacity={0.5}
       linkWidth={(link: GraphLink) => (link.internal ? 0.8 : 3)}

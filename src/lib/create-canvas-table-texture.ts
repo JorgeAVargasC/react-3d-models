@@ -1,13 +1,14 @@
 import * as THREE from 'three'
 import { drawModernChip } from './draw-modern-chip'
 import { roundRect } from './canvas-round-rect'
+import { envs } from '@/config/envs'
 
 type TableOptions = {
   width?: number
   padding?: number
   paddingX?: number
   rowHeight?: number
-  font?: string,
+  font?: string
   headerColor?: string
 }
 
@@ -22,10 +23,10 @@ export function createTableTexture(
   const {
     width = 550,
     padding = 25,
-    paddingX = 12, // 👈 nuevo padding horizontal por celda
+    paddingX = 12,
     rowHeight = 55,
     font = 'system-ui',
-    headerColor = 'transparent',
+    headerColor = 'transparent'
   } = options
 
   const headerHeight = 70
@@ -43,16 +44,16 @@ export function createTableTexture(
 
   // ==== Background ====
   const bgGradient = ctx.createLinearGradient(0, 0, 0, height)
-  bgGradient.addColorStop(0, 'rgba(15, 15, 15, 0.95)')
-  bgGradient.addColorStop(1, 'rgba(10, 10, 15, 0.95)')
+  bgGradient.addColorStop(0, envs.styles.tablesBackgroundColor + 'CC')
+  bgGradient.addColorStop(1, envs.styles.tablesBackgroundColor + 'CC')
   ctx.fillStyle = bgGradient
   roundRect(ctx, 0, 0, width, height, 0)
   ctx.fill()
 
   // ==== Header ====
   const headerGradient = ctx.createLinearGradient(0, 0, width, 0)
-  headerGradient.addColorStop(0, headerColor)
-  headerGradient.addColorStop(1, headerColor)
+  headerGradient.addColorStop(0, headerColor + '40')
+  headerGradient.addColorStop(1, headerColor + '40')
   ctx.fillStyle = headerGradient
   ctx.fillRect(0, 0, width, headerHeight)
 
@@ -74,12 +75,12 @@ export function createTableTexture(
     const y = headerHeight + 60 + rIdx * rowHeight
 
     if (rIdx % 2 === 0) {
-      ctx.fillStyle = 'rgba(255,255,255,0.02)'
+      ctx.fillStyle = 'rgba(255,255,255,0.005)'
       ctx.fillRect(padding, y - 25, width - padding * 2, rowHeight - 10)
     }
 
     row.forEach((cell, cIdx) => {
-      const x = padding + cIdx * colWidth + paddingX // 👈 agregado
+      const x = padding + cIdx * colWidth + paddingX
       if (typeof cell === 'string') {
         ctx.fillStyle = '#fff'
         ctx.fillText(cell, x, y)
@@ -93,5 +94,3 @@ export function createTableTexture(
   texture.needsUpdate = true
   return texture
 }
-
-// ===== Helpers =====

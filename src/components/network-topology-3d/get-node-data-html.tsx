@@ -1,13 +1,13 @@
 import type { PortNode } from '@/api/types/graph-types'
+import { envs } from '@/config/envs'
 
 export const getPortDataTooltipHTML = (portData: PortNode): string => {
+  const successColor = envs.styles.successColor
+  const errorColor = envs.styles.errorColor
+
   const getPortStatus = (isActive: boolean) => {
     return `
-      <span class="px-2 py-0.5 rounded-full text-xs font-medium ${
-        isActive
-          ? 'bg-green-500/20 text-green-400 border border-green-500/40'
-          : 'bg-red-500/20 text-red-400 border border-red-500/40'
-      }">
+      <span class="px-2 py-0.5 rounded-full text-xs font-medium" style="background-color: ${isActive ? successColor + '20' : errorColor + '20'}; color: ${isActive ? successColor : errorColor}; border: 1px solid ${isActive ? successColor + '40' : errorColor + '40'}; text-transform: uppercase;">
         ${isActive ? 'UP' : 'DOWN'}
       </span>`
   }

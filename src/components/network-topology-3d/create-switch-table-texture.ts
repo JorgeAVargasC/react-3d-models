@@ -1,4 +1,5 @@
 import type { SwitchNode } from '@/api/types/graph-types'
+import { envs } from '@/config/envs'
 import { createTableTexture } from '@/lib/create-canvas-table-texture'
 
 export function createSwitchTableTexture(switchData: SwitchNode) {
@@ -9,13 +10,13 @@ export function createSwitchTableTexture(switchData: SwitchNode) {
       `${port.label}`,
       {
         text: port.isActive ? 'UP' : 'DOWN',
-        color: port.isActive ? '#10b981' : '#f43f5e'
+        color: port.isActive ? envs.styles.successColor : envs.styles.errorColor
       },
       `${port.dpid}`,
       `${port.number}`
     ]),
     {
-      headerColor: 'cyan'
+      headerColor: envs.styles.switchColor
     }
   )
 }
