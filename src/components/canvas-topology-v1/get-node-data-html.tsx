@@ -1,6 +1,6 @@
 import type { PortNode } from '@/api/types/graph-types'
 
-export const getPortDataHTML = (portData: PortNode): string => {
+export const getPortDataTooltipHTML = (portData: PortNode): string => {
   const getPortStatus = (isActive: boolean) => {
     return `
       <span class="px-2 py-0.5 rounded-full text-xs font-medium ${
@@ -32,14 +32,7 @@ export const getPortDataHTML = (portData: PortNode): string => {
           <span class="text-slate-400 text-xs">DPID</span>
           <span class="font-mono text-slate-300">${portData.dpid}</span>
         </div>
-        <div class="grid grid-cols-2 gap-2 mt-2">
-          <p class="text-xs font-medium px-2 py-0.5 text-slate-400 rounded-full border border-slate-500/40 bg-slate-500/20">
-            LOW: ${portData.number}
-          </p>
-          <p class="text-xs font-medium px-2 py-0.5 text-slate-400 rounded-full border border-slate-500/40 bg-slate-500/20">
-            HIGH: ${portData.number}
-          </p>
-        </div>
+        
       </div>
     </div>
   `

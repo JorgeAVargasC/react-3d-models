@@ -12,13 +12,13 @@ import type { ILinkDTO } from '@/api/types/link.dto'
 import type { GraphNode, GraphLink } from '@/api/types/graph-types'
 
 import SpriteText from 'three-spritetext'
-import { getSwitchDataHTML } from './get-switch-data-html'
-import { getPortDataHTML } from './get-node-data-html'
-import { createTableTexture } from './create-table-texture'
+import { getSwitchDataTooltipHTML } from './get-switch-data-html'
+import { getPortDataTooltipHTML } from './get-node-data-html'
 import { buildGraphData } from './build-graph'
 import api from '@/api/api'
 import type { ILinkMetricsDTO } from '@/api/types/link-metrics.dto'
-import { createTableTextureLinkMetrics } from './create-table-texture-link-metrics'
+import { createLinksTableTexture } from './create-links-table-texture'
+import { createSwitchTableTexture } from './create-switch-table-texture'
 
 interface Props {
   switches: ISwitchDTO[]
@@ -103,7 +103,7 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
           }
 
           // Floating Table
-          const tableTexture = createTableTexture(sw)
+          const tableTexture = createSwitchTableTexture(sw)
 
           const materials = [
             new THREE.MeshStandardMaterial({ color: '#111' }), // side X+
@@ -158,10 +158,10 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
       }}
       nodeLabel={(node: GraphNode) => {
         if (node.type === 'switch') {
-          return getSwitchDataHTML(node)
+          return getSwitchDataTooltipHTML(node)
         }
         if (node.type === 'port') {
-          return getPortDataHTML(node)
+          return getPortDataTooltipHTML(node)
         }
         return ''
       }}
@@ -179,7 +179,7 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
         const group = new THREE.Group()
 
         // Floating Table
-        const tableTexture = createTableTextureLinkMetrics(currentLinkMetric)
+        const tableTexture = createLinksTableTexture(currentLinkMetric)
 
         const materials = [
           new THREE.MeshStandardMaterial({ color: '#FFF' }),
@@ -208,20 +208,19 @@ export const CanvasTopologyV1 = ({ switches, links }: Props) => {
         return group
       }}
       linkPositionUpdate={(obj, { start, end }) => {
-        // Esto ahora sirve también para Mesh o Group
         const mid = {
           x: (start.x + end.x) / 2,
           y: (start.y + end.y) / 2,
           z: (start.z + end.z) / 2
         }
 
-        obj.position.set(mid.x, mid.y + 10, mid.z) // un poco elevado
+        obj.position.set(mid.x, mid.y + 10, mid.z)
       }}
       linkColor={(link: GraphLink) =>
         link.internal ? 'gray' : 'rgb(14, 230, 43)'
       }
       linkOpacity={0.5}
-      linkWidth={(link: GraphLink) => (link.internal ? 0.8 : 1)}
+      linkWidth={(link: GraphLink) => (link.internal ? 0.8 : 3)}
       linkDirectionalParticles={(link: GraphLink) => (link.internal ? 3 : 6)}
       linkDirectionalParticleSpeed={0.004}
       linkDirectionalParticleWidth={1.2}
