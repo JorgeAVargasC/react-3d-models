@@ -15,7 +15,7 @@ export const buildGraphData = (
   const newLinks: GraphLink[] = []
 
   switches.forEach((sw) => {
-    const switchId: string = sw.switchPort.toString()
+    const switchId: string = sw.switchId.toString()
 
     const switchNode: SwitchNode = {
       ...sw,

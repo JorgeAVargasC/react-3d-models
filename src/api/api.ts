@@ -18,7 +18,10 @@ import type { ILinkMetrics } from './types/link-metrics'
 export type IApi = {
   getLinks: () => Promise<ILinkDTO[]>
   getSwitches: () => Promise<ISwitchDTO[]>
-  getLinkMetrics: (source: number, target: number) => Promise<ILinkMetricsDTO>
+  getLinkMetrics: (
+    sourceSwitch: number,
+    targetSwitch: number
+  ) => Promise<ILinkMetricsDTO>
 }
 
 const awaitDelay = delay(200)

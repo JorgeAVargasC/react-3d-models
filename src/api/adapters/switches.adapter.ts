@@ -22,7 +22,7 @@ export const switchesAdapter = (switches: ISwitch[]): ISwitchDTO[] => {
     }).filter(Boolean) as ISwitchDTO['ports']
 
     return {
-      id: s.switch_dpid.low,
+      switchId: s.switch_dpid.low,
       name: s.puerto0_dpid,
       ports,
       switchPort: s.switch_dpid.low
