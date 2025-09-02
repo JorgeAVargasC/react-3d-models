@@ -1,7 +1,7 @@
-import { NetworkTopology3D } from '@/components/network-topology-3d/network-topology-3d'
 import { useGetLinks } from '../hooks/use-get-links'
 import { useGetSwitches } from '../hooks/use-get-switches'
 import { useGetAllLinksMetrics } from '@/hooks/use-get-all-links-metrics'
+import { NetworkTopology3D } from '@/components/network-topology-3d/network-topology-3d'
 
 export const MainPage = () => {
   const linksQuery = useGetLinks()
