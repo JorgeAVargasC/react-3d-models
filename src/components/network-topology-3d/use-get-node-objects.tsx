@@ -3,7 +3,6 @@ import { useMemo } from 'react'
 import * as THREE from 'three'
 import { createSwitchTableTexture } from './create-switch-table-texture'
 import { envs } from '@/config/envs'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 interface Props {
   graphData: {
@@ -13,8 +12,6 @@ interface Props {
 }
 
 export const useGetNodeObjects = ({ graphData }: Props) => {
-  const loader = new GLTFLoader()
-
   const nodeObjects = useMemo(() => {
     const map = new Map<string, any>()
 
@@ -22,20 +19,26 @@ export const useGetNodeObjects = ({ graphData }: Props) => {
       if (node.type === 'switch') {
         const wrapper = new THREE.Group()
 
-        loader.load(
-          '/3d/router/source/lyq.glb',
-          (gltf) => {
-            const obj = gltf.scene
-            obj.scale.set(0.5, 0.5, 0.5)
-            wrapper.add(obj)
-          },
-          (xhr) => {
-            console.log(`${(xhr.loaded / xhr.total) * 100}% loaded`) // progreso opcional
-          },
-          (error) => {
-            console.error('Error al cargar GLB:', error)
-          }
+        // loader.load(
+        //   '/3d/router/source/lyq.glb',
+        //   (gltf) => {
+        //     const obj = gltf.scene
+        //     obj.scale.set(0.5, 0.5, 0.5)
+        //     wrapper.add(obj)
+        //   },
+        //   (xhr) => {
+        //     console.log(`${(xhr.loaded / xhr.total) * 100}% loaded`) // progreso opcional
+        //   },
+        //   (error) => {
+        //     console.error('Error al cargar GLB:', error)
+        //   }
+        // )
+
+        const cube = new THREE.Mesh(
+          new THREE.BoxGeometry(30, 3, 10),
+          new THREE.MeshStandardMaterial({ color: envs.styles.switchColor })
         )
+        wrapper.add(cube)
 
         const tableTexture = createSwitchTableTexture(node)
         const tableMat = new THREE.MeshStandardMaterial({
