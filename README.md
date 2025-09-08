@@ -8,10 +8,10 @@ It renders switches, links, and metrics in a VR environment, making it easier to
 
 ## 🚀 Features
 
-- **3D Network Topology** – Interactive visualization of switches and links in a 3D space.
+- **VR Network Topology** – Interactive visualization of switches and links in a VR space.
 - **Data Abstraction with Adapters** – Clean separation between backend and frontend domain models.
 - **Mocked & Real Data** – Works with both local JSON data and API endpoints via Axios.
-- **Custom Textures** – Dynamic table and metrics rendering on 3D objects.
+- **Custom Textures** – Dynamic table and metrics rendering on VR objects.
 - **Hooks-based Data Layer** – Custom React hooks for fetching and managing network data.
 
 ---
@@ -21,7 +21,7 @@ It renders switches, links, and metrics in a VR environment, making it easier to
 ```
 src
  ┣ 📂 api/                # Data layer: adapters, axios instance, types, mock data
- ┣ 📂 components/         # UI components (3D network topology visualization)
+ ┣ 📂 components/         # UI components (VR network topology visualization)
  ┣ 📂 config/             # Environment Config Variables
  ┣ 📂 constants/          # Shared constants (e.g., colors)
  ┣ 📂 helpers/            # Utility functions
@@ -51,13 +51,13 @@ src
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/JorgeAVargasC/react-3d-models
+   git clone https://github.com/JorgeAVargasC/react-VR-models
    ```
 
 2. **Navigate to the project directory**
 
    ```bash
-   cd react-3d-models
+   cd react-VR-models
    ```
 
 3. **Install dependencies**
