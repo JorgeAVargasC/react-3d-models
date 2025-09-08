@@ -82,7 +82,7 @@ src
 ## 📡 API & Data Flow
 
 1. **API / Mock Data** (JSON or backend service)
-2. **Adapters** – Convert raw backend data into frontend models
+2. **Adapters** – Convert raw backend data into frontend models, if backend changes, only the adapters need to change
 3. **Hooks** – Handle fetching, caching, and state with Tanstack Query
 4. **Components** – Render the network topology
 
@@ -100,7 +100,7 @@ subgraph API["🔌 API Layer (api.ts)"]
     PROD["prodApi (Axios)"]
 end
 
-subgraph Adapters["🔧 Adapters (DTO → Model)"]
+subgraph Adapters["🔧 Adapters"]
     A1["switches.adapter.ts"]
     A2["links.adapter.ts"]
     A3["link-metrics.adapter.ts"]
@@ -112,10 +112,10 @@ subgraph Hooks["⚛️ Custom Hooks"]
     H3["use-get-link-metrics"]
 end
 
-subgraph Components["🖼️ Components (3D)"]
+subgraph Components["🖼️ Components"]
     C1["use-get-node-objects"]
     C2["use-get-links-objects"]
-    C3["NetworkTopology3D"]
+    C3["NetworkTopologyVR"]
 end
 
 Backend --> API
@@ -138,14 +138,21 @@ C2 --> C3
 
 This project is licensed under the **MIT License**.
 
-# API
+
+---
+
+# Examples
+
+## Adapters
+
+### Switches Adapter
 
 ```ts
 const switchesAdapter: (switches: ISwitch[]) => ISwitchDTO[]
 ```
 
+###### ISwitch[]
 ```json
-// ISwitch[]
 [
   {
     "switches": {
@@ -182,8 +189,8 @@ const switchesAdapter: (switches: ISwitch[]) => ISwitchDTO[]
 ]
 ```
 
+###### ISwitchDTO[]
 ```json
-// ISwitchDTO[]
 [
   {
     "switchId": 6,

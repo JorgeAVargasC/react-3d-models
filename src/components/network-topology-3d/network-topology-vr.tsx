@@ -15,7 +15,7 @@ interface Props {
   linkObjects: Map<string, THREE.Object3D<THREE.Object3DEventMap>>
 }
 
-export const NetworkTopology3D = ({
+export const NetworkTopologyVR = ({
   graphData,
   linkObjects,
   nodeObjects
