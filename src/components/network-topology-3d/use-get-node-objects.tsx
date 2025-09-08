@@ -3,6 +3,7 @@ import { useMemo } from 'react'
 import * as THREE from 'three'
 import { createSwitchTableTexture } from './create-switch-table-texture'
 import { envs } from '@/config/envs'
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
 
 interface Props {
   graphData: {
@@ -12,6 +13,8 @@ interface Props {
 }
 
 export const useGetNodeObjects = ({ graphData }: Props) => {
+  // const loader = new GLTFLoader()
+
   const nodeObjects = useMemo(() => {
     const map = new Map<string, any>()
 

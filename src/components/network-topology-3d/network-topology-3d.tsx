@@ -1,42 +1,27 @@
 import 'aframe'
 import ForceGraphVR from 'react-force-graph-vr'
-import { useMemo, useRef } from 'react'
 import * as THREE from 'three'
 
-import type { ISwitchDTO } from '@/api/types/switch.dto'
-import type { ILinkDTO } from '@/api/types/link.dto'
 import type { GraphNode, GraphLink } from '@/api/types/graph-types'
-import type { ILinkMetricsDTO } from '@/api/types/link-metrics.dto'
 
-import { buildGraphData } from './build-graph'
 import { envs } from '@/config/envs'
-import { useGetNodeObjects } from './use-get-node-objects'
-import { useGetLinksObjects } from './use-get-links-objects'
 
 interface Props {
-  switches: ISwitchDTO[]
-  links: ILinkDTO[]
-  linksMetrics: Record<string, ILinkMetricsDTO | undefined>
+  graphData: {
+    nodes: GraphNode[]
+    links: GraphLink[]
+  }
+  nodeObjects: Map<string, any>
+  linkObjects: Map<string, THREE.Object3D<THREE.Object3DEventMap>>
 }
 
-export const NetworkTopology3D = ({ switches, links, linksMetrics }: Props) => {
-  const fgRef = useRef<any>(undefined)
-
-  const graphData = useMemo(
-    () => buildGraphData(switches, links),
-    [switches, links]
-  )
-
-  const nodeObjects = useGetNodeObjects({ graphData })
-
-  const linkObjects = useGetLinksObjects({
-    graphData,
-    linksMetrics
-  })
-
+export const NetworkTopology3D = ({
+  graphData,
+  linkObjects,
+  nodeObjects
+}: Props) => {
   return (
     <ForceGraphVR
-      ref={fgRef}
       graphData={graphData}
       nodeThreeObject={(n: GraphNode) =>
         nodeObjects.get(n.id) || new THREE.Group()
