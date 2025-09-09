@@ -1,0 +1,70 @@
+[
+  {
+    "switches": {
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s1-eth1",
+      "switch_dpid": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto2_dpid": "s1-eth2",
+      "puerto2_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto0_dpid": "s1",
+      "port0_status": "DOWN",
+      "port1_status": "UP"
+    }
+  },
+  {
+    "switches": {
+      "port2_status": "UP",
+      "puerto0_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto1_dpid": "s2-eth1",
+      "switch_dpid": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s2-eth2",
+      "puerto2_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto0_dpid": "s2",
+      "port0_status": "DOWN",
+      "port1_status": "UP"
+    }
+  },
+  {
+    "switches": {
+      "switch_dpid": {
+        "low": 4,
+        "high": 0
+      }
+    }
+  },
+  {
+    "switches": {
+      "switch_dpid": {
+        "low": 3,
+        "high": 0
+      }
+    }
+  }
+]

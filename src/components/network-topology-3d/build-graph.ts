@@ -6,6 +6,8 @@ import type {
 } from '@/api/types/graph-types'
 import type { ILinkDTO } from '@/api/types/link.dto'
 import type { ISwitchDTO } from '@/api/types/switch.dto'
+import { COLORS } from '@/constants/colors'
+import { logger } from '@/helpers/logger'
 
 export const buildGraphData = (
   switches: ISwitchDTO[],
@@ -18,10 +20,10 @@ export const buildGraphData = (
     const switchId: string = sw.switchId.toString()
 
     const switchNode: SwitchNode = {
-      ...sw,
       id: switchId,
       type: 'switch',
-      group: switchId
+      group: switchId,
+      ...sw
     }
 
     nodes.push(switchNode)
@@ -30,11 +32,11 @@ export const buildGraphData = (
       const portId = `${switchId}-${port.number}`
 
       const portNode: PortNode = {
-        ...port,
         id: portId,
         type: 'port',
         parentSwitchId: switchId,
-        group: switchId
+        group: switchId,
+        ...port
       }
 
       nodes.push(portNode)
@@ -62,6 +64,10 @@ export const buildGraphData = (
     }
     newLinks.push(portToPort)
   })
+
+  logger('[buildGraphData]', COLORS.INDIGO)
+  console.log('nodes', [...nodes])
+  console.log('links', [...newLinks])
 
   return { nodes, links: newLinks }
 }

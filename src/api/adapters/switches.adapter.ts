@@ -23,7 +23,7 @@ export const switchesAdapter = (switches: ISwitch[]): ISwitchDTO[] => {
 
     return {
       switchId: s.switch_dpid.low,
-      name: s.puerto0_dpid,
+      name: `s${s.switch_dpid.low}`,
       ports,
       switchPort: s.switch_dpid.low
     }
