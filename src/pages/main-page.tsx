@@ -1,7 +1,7 @@
 import { useGetLinks } from '../hooks/use-get-links'
 import { useGetSwitches } from '../hooks/use-get-switches'
 import { useGetAllLinksMetrics } from '@/hooks/use-get-all-links-metrics'
-import { NetworkTopology3D } from '@/components/network-topology-3d/network-topology-3d'
+import { NetworkTopologyVR } from '@/components/network-topology-3d/network-topology-vr'
 import { useMemo } from 'react'
 import { useGetNodeObjects } from '@/components/network-topology-3d/use-get-node-objects'
 import { useGetLinksObjects } from '@/components/network-topology-3d/use-get-links-objects'
@@ -53,7 +53,7 @@ export const MainPage = () => {
         thereIsGraphData &&
         thereIsNodeObjects &&
         thereIsLinkObjects && (
-          <NetworkTopology3D
+          <NetworkTopologyVR
             graphData={graphData}
             nodeObjects={nodeObjects}
             linkObjects={linkObjects}
