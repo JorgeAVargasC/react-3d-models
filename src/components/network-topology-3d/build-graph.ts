@@ -65,6 +65,28 @@ export const buildGraphData = (
     newLinks.push(portToPort)
   })
 
+  // Add new node with a root switch connected to all switches through every port 0
+  nodes.push({
+    id: 'root',
+    type: 'switch',
+    group: 'root',
+    switchId: 0,
+    name: 'Controller',
+    ports: []
+  })
+
+  // create links from root to all ports 0
+  nodes.forEach((node) => {
+    if (node.type === 'port' && node.number === -2) {
+      const rootToSwitch: GraphLink = {
+        source: 'root',
+        target: node.id,
+        internal: true
+      }
+      newLinks.push(rootToSwitch)
+    }
+  })
+
   logger('[buildGraphData]', COLORS.INDIGO)
   console.log('nodes', [...nodes])
   console.log('links', [...newLinks])

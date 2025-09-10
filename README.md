@@ -37,13 +37,19 @@ src
 
 ## 🛠️ Tech Stack
 
-- **React + Vite** – Frontend framework & bundler
-- **TypeScript** – Type safety
-- **Axios** – HTTP client
-- **Tanstack Query** – Server state management
-- **Three.js & react-force-graph-vr** – VR graph support
-- **TailwindCSS** – Styling with utility classes
-- **ESLint + Prettier** – Code linting & formatting
+| Technology               | Version | Purpose                 |
+| ------------------------ | ------- | ----------------------- |
+| **React**                | ^19.1.0 | Core UI library         |
+| **Vite**                 | ^6.3.5  | Bundler and dev server  |
+| **TypeScript**           | ~5.8.3  | Static typing           |
+| **Axios**                | ^1.11.0 | HTTP client             |
+| **TanStack Query**       | ^5.85.5 | Server state management |
+| **Three.js**             | ^0.173  | 3D rendering            |
+| **react-force-graph-vr** | ^2.1.0  | VR graph support        |
+| **TailwindCSS**          | ^4.1.12 | Utility-first styling   |
+| **ESLint**               | ^9.25.0 | Code linting            |
+| **Prettier**             | 3.6.2   | Code formatting         |
+
 
 ---
 
@@ -51,13 +57,13 @@ src
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/JorgeAVargasC/react-VR-models
+   git clone https://github.com/JorgeAVargasC/react-3d-models
    ```
 
 2. **Navigate to the project directory**
 
    ```bash
-   cd react-VR-models
+   cd react-3d-models
    ```
 
 3. **Install dependencies**

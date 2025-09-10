@@ -39,7 +39,9 @@ export const useGetNodeObjects = ({ graphData }: Props) => {
 
         const cube = new THREE.Mesh(
           new THREE.BoxGeometry(30, 3, 10),
-          new THREE.MeshStandardMaterial({ color: envs.styles.switchColor })
+          new THREE.MeshStandardMaterial({
+            color: node.id === 'root' ? '#FFFFFF' : envs.styles.switchColor
+          })
         )
         wrapper.add(cube)
 

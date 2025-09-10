@@ -5,7 +5,7 @@ import { createTableTexture } from '@/lib/create-canvas-table-texture'
 export function createSwitchTableTexture(switchData: SwitchNode) {
   return createTableTexture(
     `${switchData.name}`,
-    ['Port', 'Status', 'DPID', 'LOW'],
+    switchData.ports.length > 0 ? ['Port', 'Status', 'DPID', 'LOW'] : [],
     switchData.ports.map((port) => [
       `${port.label}`,
       {
