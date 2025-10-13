@@ -37,18 +37,19 @@ src
 
 ## 🛠️ Tech Stack
 
-| Technology               | Version | Purpose                 |
-| ------------------------ | ------- | ----------------------- |
-| **React**                | ^19.1.0 | Core UI library         |
-| **Vite**                 | ^6.3.5  | Bundler and dev server  |
-| **TypeScript**           | ~5.8.3  | Static typing           |
-| **Axios**                | ^1.11.0 | HTTP client             |
-| **TanStack Query**       | ^5.85.5 | Server state management |
-| **Three.js**             | ^0.173  | 3D rendering            |
-| **react-force-graph-vr** | ^2.1.0  | VR graph support        |
-| **TailwindCSS**          | ^4.1.12 | Utility-first styling   |
-| **ESLint**               | ^9.25.0 | Code linting            |
-| **Prettier**             | 3.6.2   | Code formatting         |
+| Technology               | Version   | Purpose                 |
+| ------------------------ | --------- | ----------------------- |
+| **Node.js**              | ^v20.19.4 | JavaScript runtime      |
+| **React**                | ^19.1.0   | Core UI library         |
+| **Vite**                 | ^6.3.5    | Bundler and dev server  |
+| **TypeScript**           | ~5.8.3    | Static typing           |
+| **Axios**                | ^1.11.0   | HTTP client             |
+| **TanStack Query**       | ^5.85.5   | Server state management |
+| **Three.js**             | ^0.173    | 3D rendering            |
+| **react-force-graph-vr** | ^2.1.0    | VR graph support        |
+| **TailwindCSS**          | ^4.1.12   | Utility-first styling   |
+| **ESLint**               | ^9.25.0   | Code linting            |
+| **Prettier**             | 3.6.2     | Code formatting         |
 
 
 ---
