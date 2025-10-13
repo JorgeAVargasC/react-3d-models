@@ -7,10 +7,10 @@ export const createLinksTableTexture = (link: ILinkMetricsDTO) => {
     `LINK S${link.source} → S${link.target}`,
     ['Metric', 'Value'],
     [
-      [
-        'Lost',
-        { text: `${link.lost.toFixed(2)} %`, color: envs.styles.errorColor }
-      ],
+      // [
+      //   'Lost',
+      //   { text: `${link.lost.toFixed(2)} %`, color: envs.styles.errorColor }
+      // ],
       [
         'Delay',
         { text: `${link.delay.toFixed(2)} ms`, color: envs.styles.warningColor }

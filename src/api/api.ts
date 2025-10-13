@@ -72,18 +72,42 @@ const devApi: IApi = {
 const prodApi: IApi = {
   getLinks: async () => {
     const res = await axiosInstance.get<ILink[][]>('links')
+    const linksAdapted = linksAdapter(res.data)
 
-    return linksAdapter(res.data)
+    logger('[api][prod] getLinks - RAW DATA', COLORS.GREEN)
+    console.log(res.data)
+
+    logger('[api][prod] getLinks - ADAPTED', COLORS.GREEN)
+    console.log(linksAdapted)
+
+    return linksAdapted
   },
   getSwitches: async () => {
     const res = await axiosInstance.get<ISwitch[]>('switches')
-    return switchesAdapter(res.data)
+    const switchesAdapted = switchesAdapter(res.data)
+
+    logger('[api][prod] getSwitches - RAW DATA', COLORS.SKY)
+    console.log(res.data)
+
+    logger('[api][prod] getSwitches - ADAPTED', COLORS.SKY)
+    console.log(switchesAdapted)
+
+    return switchesAdapted
   },
   getLinkMetrics: async (origen, destino) => {
     const res = await axiosInstance.get<ILinkMetrics>(
       `metrics?origen=${origen}&destino=${destino}`
     )
-    return linkMetricsAdapter(res.data)
+
+    const linksMetricsAdapted = linkMetricsAdapter(res.data)
+
+    logger('[api][prod] getLinkMetrics - RAW DATA', COLORS.ORANGE)
+    console.log(res.data)
+
+    logger('[api][prod] getLinkMetrics - ADAPTED', COLORS.ORANGE)
+    console.log(linksMetricsAdapted)
+
+    return linksMetricsAdapted
   }
 }
 
