@@ -1,7 +1,6 @@
 {
-  "origen": "2",
-  "destino": "3",
-  "perdidas": 50,
-  "delay": "150",
-  "throughput": "200"
+  "origen": "3",
+  "destino": "7",
+  "delay": "0.031070s",
+  "throughput": null
 }

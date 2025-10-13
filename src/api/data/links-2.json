@@ -2,15 +2,7 @@
   [
     {
       "relationship": {
-        "Destino": "S6",
-        "Origen": "H3"
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "delay": "0.046924s",
+        "delay": "0.031508s",
         "Destino": "S6",
         "Origen": "S3",
         "OrigenPuerto": {
@@ -27,99 +19,7 @@
   [
     {
       "relationship": {
-        "Destino": "S7",
-        "Origen": "H4"
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "delay": "0.040733s",
-        "Destino": "S7",
-        "Origen": "S3",
-        "OrigenPuerto": {
-          "low": 3,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 1,
-          "high": 0
-        }
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "delay": "0.035414s",
-        "Destino": "S1",
-        "Origen": "S3",
-        "OrigenPuerto": {
-          "low": 1,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 2,
-          "high": 0
-        }
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "delay": "0.036001s",
-        "Destino": "S1",
-        "Origen": "S2",
-        "OrigenPuerto": {
-          "low": 1,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 1,
-          "high": 0
-        }
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "delay": "0.035414s",
-        "Destino": "S3",
-        "Origen": "S1",
-        "OrigenPuerto": {
-          "low": 2,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 1,
-          "high": 0
-        }
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "Destino": "S3",
-        "Origen": "S6",
-        "OrigenPuerto": {
-          "low": 1,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 2,
-          "high": 0
-        }
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "delay": "0.040733s",
+        "delay": "0.031070s",
         "Destino": "S3",
         "Origen": "S7",
         "OrigenPuerto": {
@@ -136,15 +36,15 @@
   [
     {
       "relationship": {
-        "delay": "0.032047s",
-        "Destino": "S2",
-        "Origen": "S5",
+        "delay": "0.031821s",
+        "Destino": "S3",
+        "Origen": "S1",
         "OrigenPuerto": {
-          "low": 1,
+          "low": 2,
           "high": 0
         },
         "DestinoPuerto": {
-          "low": 3,
+          "low": 1,
           "high": 0
         }
       }
@@ -153,6 +53,109 @@
   [
     {
       "relationship": {
+        "delay": "0.031508s",
+        "Destino": "S3",
+        "Origen": "S6",
+        "OrigenPuerto": {
+          "low": 1,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.032889s",
+        "Destino": "S4",
+        "Origen": "S2",
+        "OrigenPuerto": {
+          "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.031070s",
+        "Destino": "S7",
+        "Origen": "S3",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.030976s",
+        "Destino": "S5",
+        "Origen": "S2",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.031036s",
+        "Destino": "S1",
+        "Origen": "S2",
+        "OrigenPuerto": {
+          "low": 1,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.031821s",
+        "Destino": "S1",
+        "Origen": "S3",
+        "OrigenPuerto": {
+          "low": 1,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.032889s",
         "Destino": "S2",
         "Origen": "S4",
         "OrigenPuerto": {
@@ -169,7 +172,7 @@
   [
     {
       "relationship": {
-        "delay": "0.036001s",
+        "delay": "0.031036s",
         "Destino": "S2",
         "Origen": "S1",
         "OrigenPuerto": {
@@ -186,48 +189,15 @@
   [
     {
       "relationship": {
-        "Destino": "S5",
-        "Origen": "H2"
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "delay": "0.032047s",
-        "Destino": "S5",
-        "Origen": "S2",
+        "delay": "0.030976s",
+        "Destino": "S2",
+        "Origen": "S5",
         "OrigenPuerto": {
+          "low": 1,
+          "high": 0
+        },
+        "DestinoPuerto": {
           "low": 3,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 1,
-          "high": 0
-        }
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "Destino": "S4",
-        "Origen": "H1"
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "delay": "0.044935s",
-        "Destino": "S4",
-        "Origen": "S2",
-        "OrigenPuerto": {
-          "low": 2,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 1,
           "high": 0
         }
       }
