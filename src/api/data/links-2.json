@@ -2,10 +2,61 @@
   [
     {
       "relationship": {
-        "Destino": "S1",
-        "Origen": "S2",
+        "Destino": "S6",
+        "Origen": "H3"
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.046924s",
+        "Destino": "S6",
+        "Origen": "S3",
         "OrigenPuerto": {
           "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S7",
+        "Origen": "H4"
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.040733s",
+        "Destino": "S7",
+        "Origen": "S3",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.035414s",
+        "Destino": "S1",
+        "Origen": "S3",
+        "OrigenPuerto": {
+          "low": 1,
           "high": 0
         },
         "DestinoPuerto": {
@@ -18,10 +69,78 @@
   [
     {
       "relationship": {
-        "Destino": "S2",
-        "Origen": "S3",
+        "delay": "0.036001s",
+        "Destino": "S1",
+        "Origen": "S2",
+        "OrigenPuerto": {
+          "low": 1,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.035414s",
+        "Destino": "S3",
+        "Origen": "S1",
         "OrigenPuerto": {
           "low": 2,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S3",
+        "Origen": "S6",
+        "OrigenPuerto": {
+          "low": 1,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.040733s",
+        "Destino": "S3",
+        "Origen": "S7",
+        "OrigenPuerto": {
+          "low": 1,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 3,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.032047s",
+        "Destino": "S2",
+        "Origen": "S5",
+        "OrigenPuerto": {
+          "low": 1,
           "high": 0
         },
         "DestinoPuerto": {
@@ -35,13 +154,55 @@
     {
       "relationship": {
         "Destino": "S2",
-        "Origen": "S1",
+        "Origen": "S4",
         "OrigenPuerto": {
-          "low": 2,
+          "low": 1,
           "high": 0
         },
         "DestinoPuerto": {
           "low": 2,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.036001s",
+        "Destino": "S2",
+        "Origen": "S1",
+        "OrigenPuerto": {
+          "low": 1,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
+          "high": 0
+        }
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "Destino": "S5",
+        "Origen": "H2"
+      }
+    }
+  ],
+  [
+    {
+      "relationship": {
+        "delay": "0.032047s",
+        "Destino": "S5",
+        "Origen": "S2",
+        "OrigenPuerto": {
+          "low": 3,
+          "high": 0
+        },
+        "DestinoPuerto": {
+          "low": 1,
           "high": 0
         }
       }
@@ -51,45 +212,22 @@
     {
       "relationship": {
         "Destino": "S4",
-        "Origen": "S3",
-        "OrigenPuerto": {
-          "low": 3,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 2,
-          "high": 0
-        }
+        "Origen": "H1"
       }
     }
   ],
   [
     {
       "relationship": {
-        "Destino": "S3",
-        "Origen": "S4",
-        "OrigenPuerto": {
-          "low": 2,
-          "high": 0
-        },
-        "DestinoPuerto": {
-          "low": 3,
-          "high": 0
-        }
-      }
-    }
-  ],
-  [
-    {
-      "relationship": {
-        "Destino": "S3",
+        "delay": "0.044935s",
+        "Destino": "S4",
         "Origen": "S2",
         "OrigenPuerto": {
-          "low": 3,
+          "low": 2,
           "high": 0
         },
         "DestinoPuerto": {
-          "low": 2,
+          "low": 1,
           "high": 0
         }
       }

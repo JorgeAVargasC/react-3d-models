@@ -2,8 +2,8 @@ export interface ILink {
   relationship: {
     Destino: string
     Origen: string
-    OrigenPuerto: PortNumber
-    DestinoPuerto: PortNumber
+    OrigenPuerto?: PortNumber
+    DestinoPuerto?: PortNumber
   }
 }
 

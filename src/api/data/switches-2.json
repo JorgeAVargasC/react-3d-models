@@ -2,69 +2,195 @@
   {
     "switches": {
       "port2_status": "UP",
-      "puerto0_numero": {
-        "low": -2,
-        "high": 0
-      },
-      "puerto1_dpid": "s1-eth1",
-      "switch_dpid": {
-        "low": 1,
-        "high": 0
-      },
-      "puerto2_dpid": "s1-eth2",
-      "puerto2_numero": {
+      "puerto3_numero": {
         "low": 2,
         "high": 0
       },
-      "puerto1_numero": {
+      "switch_dpid": {
+        "low": 6,
+        "high": 0
+      },
+      "puerto1_dpid": "s6",
+      "puerto2_dpid": "s6-eth1",
+      "puerto2_numero": {
         "low": 1,
         "high": 0
       },
-      "puerto0_dpid": "s1",
-      "port0_status": "DOWN",
-      "port1_status": "UP"
+      "puerto1_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "port3_status": "UP",
+      "puerto3_dpid": "s6-eth2",
+      "port1_status": "DOWN"
     }
   },
   {
     "switches": {
       "port2_status": "UP",
-      "puerto0_numero": {
-        "low": -2,
+      "puerto3_numero": {
+        "low": 2,
         "high": 0
       },
-      "puerto1_dpid": "s2-eth1",
       "switch_dpid": {
-        "low": 2,
+        "low": 7,
         "high": 0
       },
-      "puerto2_dpid": "s2-eth2",
+      "puerto1_dpid": "s7",
+      "puerto2_dpid": "s7-eth1",
       "puerto2_numero": {
-        "low": 2,
-        "high": 0
-      },
-      "puerto1_numero": {
         "low": 1,
         "high": 0
       },
-      "puerto0_dpid": "s2",
-      "port0_status": "DOWN",
-      "port1_status": "UP"
-    }
-  },
-  {
-    "switches": {
-      "switch_dpid": {
-        "low": 4,
+      "puerto1_numero": {
+        "low": -2,
         "high": 0
-      }
+      },
+      "port3_status": "UP",
+      "puerto3_dpid": "s7-eth2",
+      "port1_status": "DOWN"
     }
   },
   {
     "switches": {
+      "port2_status": "UP",
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "switch_dpid": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_dpid": "s1",
+      "puerto2_dpid": "s1-eth1",
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "port3_status": "UP",
+      "puerto3_dpid": "s1-eth2",
+      "port1_status": "DOWN"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s3-eth1",
+      "puerto4_dpid": "s3-eth3",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "DOWN",
+      "port2_status": "UP",
       "switch_dpid": {
         "low": 3,
         "high": 0
-      }
+      },
+      "puerto1_dpid": "s3",
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto3_dpid": "s3-eth2"
+    }
+  },
+  {
+    "switches": {
+      "puerto4_numero": {
+        "low": 3,
+        "high": 0
+      },
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto2_dpid": "s2-eth1",
+      "puerto4_dpid": "s2-eth3",
+      "port4_status": "UP",
+      "port3_status": "UP",
+      "port1_status": "DOWN",
+      "port2_status": "UP",
+      "switch_dpid": {
+        "low": 2,
+        "high": 0
+      },
+      "puerto1_dpid": "s2",
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "puerto3_dpid": "s2-eth2"
+    }
+  },
+  {
+    "switches": {
+      "port2_status": "UP",
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "switch_dpid": {
+        "low": 5,
+        "high": 0
+      },
+      "puerto1_dpid": "s5",
+      "puerto2_dpid": "s5-eth1",
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "port3_status": "UP",
+      "puerto3_dpid": "s5-eth2",
+      "port1_status": "DOWN"
+    }
+  },
+  {
+    "switches": {
+      "port2_status": "UP",
+      "puerto3_numero": {
+        "low": 2,
+        "high": 0
+      },
+      "switch_dpid": {
+        "low": 4,
+        "high": 0
+      },
+      "puerto1_dpid": "s4",
+      "puerto2_dpid": "s4-eth1",
+      "puerto2_numero": {
+        "low": 1,
+        "high": 0
+      },
+      "puerto1_numero": {
+        "low": -2,
+        "high": 0
+      },
+      "port3_status": "UP",
+      "puerto3_dpid": "s4-eth2",
+      "port1_status": "DOWN"
     }
   }
 ]

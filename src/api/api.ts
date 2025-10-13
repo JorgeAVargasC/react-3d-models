@@ -14,8 +14,8 @@ import { logger } from '@/helpers/logger'
 import { COLORS } from '@/constants/colors'
 
 // mock data
-import linksData from './data/links.json'
-import switchesData from './data/switches.json'
+import linksData from './data/links-2.json'
+import switchesData from './data/switches-2.json'
 import linkMetricsData from './data/link-metrics.json'
 
 export type IApi = {
@@ -100,12 +100,6 @@ const prodApi: IApi = {
     )
 
     const linksMetricsAdapted = linkMetricsAdapter(res.data)
-
-    logger('[api][prod] getLinkMetrics - RAW DATA', COLORS.ORANGE)
-    console.log(res.data)
-
-    logger('[api][prod] getLinkMetrics - ADAPTED', COLORS.ORANGE)
-    console.log(linksMetricsAdapted)
 
     return linksMetricsAdapted
   }
